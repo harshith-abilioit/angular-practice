@@ -1,3 +1,4 @@
+<div class="main">
 <!-- string interpolation .ts -> Html -->
 <h1>String interpolation</h1>
 <p>{{num}}</p>
@@ -65,10 +66,9 @@ Job role: <input type="text" [(ngModel)]="role">
     </tr>
 </table>
 
+
+<!-- ng Switch -->
 <h1>ng Switch</h1>
-<!-- <input type="text" > -->
-
-
 Number 1 : <input type="number" [(ngModel)]="num1">
 Number 2 : <input type="number" [(ngModel)]="num2">
 <select [(ngModel)]="operation">
@@ -86,4 +86,18 @@ Number 2 : <input type="number" [(ngModel)]="num2">
 </div>
 
 <h1>Pipes in Angular</h1>
-<p>{{'angular' | uppercase}}</p>
+<b>Builtin Pipes</b>
+<ul>
+    <li> uppercase :  {{'angular' | uppercase}}</li>
+    <li>titlecase :  {{'angular react javascript' | titlecase}}</li>
+    <li>lowercase :  {{'ANGULAR' | lowercase}}</li>
+    <li>currency :  {{'43200' | currency}}</li>
+    <li>currency country :  {{'9887200' | currency : 'INR'}}</li>
+    <li>currency code :  {{'7576546' | currency : 'INR' :'code'}}</li>
+    <li>object representation :  {{personDetails | json}}</li>
+    <li>date object : {{dob | date}}</li>
+    <li>date object modified : {{dob | date : 'dd/MM/yyyy'}}</li>
+    <li>num percent : {{'0.88' | percent}}</li>
+    <li>slice string {{"angular" | slice:1:5}}</li>
+</ul>
+</div>

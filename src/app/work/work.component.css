@@ -1,3 +1,6 @@
+.main{
+    padding-left: 2rem;
+}
 .active{
     background-color: blue;
     color: white;

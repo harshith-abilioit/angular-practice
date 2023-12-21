@@ -61,4 +61,8 @@ export class WorkComponent {
 
   operation:string = "+";
 
+  personDetails:object = {id:1,name:"Harshith",role:"intern"}
+  
+  dob:Date = new Date()
+
 }
