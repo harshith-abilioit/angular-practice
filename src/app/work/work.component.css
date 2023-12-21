@@ -1,0 +1,15 @@
+.active{
+    background-color: blue;
+    color: white;
+}
+.inactive{
+    background-color: red;
+    color: white;
+}
+
+h1{
+    margin-top: 1rem;
+    text-decoration: underline;
+    font-weight: 700;
+    color: red;
+}

@@ -1,0 +1,89 @@
+<!-- string interpolation .ts -> Html -->
+<h1>String interpolation</h1>
+<p>{{num}}</p>
+<p>{{name()}}</p>
+
+<!-- class binding .ts -> Html -->
+<h1>Class Binding</h1>
+<button (click)="increment()">plus 1</button>
+<button on-click="decrement()">minus 1</button>
+<p>count : {{count}}</p>
+
+
+<!-- Event binding HTML -> .ts -->
+<h1>Event Binding</h1>
+Name : <input type="text" (input)="changeName($event)">
+<p>your name {{myName}}</p>
+
+
+<!-- Two way dataa binding .ts = Html -->
+<h1>Two way data binding</h1>
+Job role: <input type="text" [(ngModel)]="role">
+<p>{{role}}</p>
+<button (click)="updateJob()">update job</button>
+
+<!-- Directives -->
+<h1>Directives</h1>
+<p>ngIf ngFor ngSwitch</p>
+<p *ngIf="showPtag" >example of ngIf</p>
+<button (click)="changeShow()" >show/hide p tag</button>
+<ul *ngFor="let num of ngforArray">
+    <li>ngfor usecase {{num}}</li>
+</ul>
+
+<!--ngIf Else-->
+<h1>NgIf else</h1>
+<div *ngIf="moviesArray.length===0; then load ; else showDataContainer" ></div>
+
+<ng-template #load>Loading...</ng-template>
+
+<ng-template #showDataContainer>
+    <ul *ngFor="let movie of moviesArray">
+        <li>{{movie}}</li>
+    </ul>
+</ng-template>
+
+<!--ngFor-->
+<h1>ng For</h1>
+<p>[{{alphabets}}]</p>
+<table border="1">
+    <tr>
+        <td>content</td>
+        <td>Index</td>
+        <td>First</td>
+        <td>Last</td>
+        <td>Even</td>
+        <td>Odd</td>
+    </tr>
+    <tr *ngFor="let char of alphabets; index as idx; first as f; last as l; even as e; odd as o">
+        <td>{{char}}</td>
+        <td>{{idx}}</td>
+        <td>{{f}}</td>
+        <td>{{l}}</td>
+        <td>{{e}}</td>
+        <td>{{o}}</td>
+    </tr>
+</table>
+
+<h1>ng Switch</h1>
+<!-- <input type="text" > -->
+
+
+Number 1 : <input type="number" [(ngModel)]="num1">
+Number 2 : <input type="number" [(ngModel)]="num2">
+<select [(ngModel)]="operation">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<div [ngSwitch]="operation">
+    <div *ngSwitchCase="'+'">{{num1}} + {{num2}} = {{num1+num2}}</div>
+    <div *ngSwitchCase="'-'">{{num1}} - {{num2}} = {{num1-num2}}</div>
+    <div *ngSwitchCase="'*'">{{num1}} * {{num2}} = {{num1*num2}}</div>
+    <div *ngSwitchCase="'/'">{{num1}} / {{num2}} = {{num1/num2}}</div>
+    <div *ngSwitchDefault="">Invalid</div>
+</div>
+
+<h1>Pipes in Angular</h1>
+<p>{{'angular' | uppercase}}</p>
