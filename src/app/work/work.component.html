@@ -100,4 +100,57 @@ Number 2 : <input type="number" [(ngModel)]="num2">
     <li>num percent : {{'0.88' | percent}}</li>
     <li>slice string {{"angular" | slice:1:5}}</li>
 </ul>
+
+<!--custom pipes-->
+<h1>Custom Pipes</h1>
+<p>{{ person | testPipe : wish }}</p>
+<p>{{ word | removeNums }}</p>
+
+<h1>Template referrence variable</h1>
+<p #ptag>this is a P tag</p>
+<p>{{ptag.textContent}}</p>
+
+
+<h1>Parent to child communication</h1>
+<b>parent to chilld using Input decorator</b>
+<p>{{dataFromParent}}</p>
+<p>Array from parent</p>
+<ul *ngFor="let name of collegues">
+    <li>{{name}}</li>
+</ul>
+
+<h1>Child to Parent using Template Ref</h1>
+
+child input in html : <input type="text" [(ngModel)]="childInput">
+
+<p #para>This is a Para Element</p>
+<button (click)="test()">console</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
+

@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component,ViewChild } from '@angular/core';
+import { WorkComponent } from './work/work.component';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Home'
-  data:Array<Number>=[1,2,3,4];
+  parentData = 'Hello from parent!';
+  collegues:Array<string> = ["harshith","mahesh","ahmed","Jeshwanth"];
+  parentToChild = "data from parent to child";
+
+  @ViewChild(WorkComponent) work:any
+
+  fromChild:string = ''
+
+  call(){
+    this.fromChild = this.work.viewChildData
+  }
 }

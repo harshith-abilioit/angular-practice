@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component,Input, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-work',
   templateUrl: './work.component.html',
   styleUrls: ['./work.component.css']
 })
+
 export class WorkComponent {
+
   // string interpolation
   num = 10;
   name() {
@@ -63,6 +65,26 @@ export class WorkComponent {
 
   personDetails:object = {id:1,name:"Harshith",role:"intern"}
   
-  dob:Date = new Date()
+  dob:Date = new Date();
 
+  person:object = {'name':"sruthi hasan",'gender':"F"};
+
+  wish:string = "Good Morning, Hava a nice day";
+
+  word:string = "hello123";
+
+  @Input() dataFromParent!: string;
+  @Input() collegues!:Array<string>;
+
+  templateRefCtoPData:string = "data from child to parent using template referrence"
+  childInput:string = '';
+
+  viewChildData:string = 'data from child to parent using viewchild';
+  
+
+  @ViewChild('para') paraElement:any
+
+  test(){
+    console.log(this.paraElement.nativeElement.innerText)
+  }
 }

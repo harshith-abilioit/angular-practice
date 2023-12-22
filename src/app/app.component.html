@@ -1,1 +1,51 @@
-<app-work></app-work>
+<!-- <app-work [dataFromParent]="parentData"
+[collegues]="collegues"
+#child> </app-work>
+<div>
+<h1>PARENT COMPONENT</h1>
+<p>{{child.templateRefCtoPData}}</p>
+from childInput in Parent : 
+<p>{{child.childInput}}</p>
+<button (click)="call()" >child</button>
+<p>{{fromChild}}</p> 
+</div>
+-->
+<ul>
+    <li>
+        <a routerLink="">home</a>
+    </li>
+    <li>
+        <a routerLink="about" routerLinkActive="active">about</a>
+    </li>
+    <li>
+        <a routerLink="contact" routerLinkActive="active">contact</a>
+    </li>
+</ul>
+
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
