@@ -1,3 +1,12 @@
+<ul>
+    <li>
+        <a routerLink="home1">home 1</a>
+    </li>
+    <li>
+        <a routerLink="home2" routerLinkActive="active">home 2</a>
+    </li>
+</ul>
+<router-outlet></router-outlet>
 <div class="main">
 <!-- string interpolation .ts -> Html -->
 <h1>String interpolation</h1>
@@ -6,15 +15,17 @@
 
 <!-- class binding .ts -> Html -->
 <h1>Class Binding</h1>
-<button (click)="increment()">plus 1</button>
-<button on-click="decrement()">minus 1</button>
-<p>count : {{count}}</p>
+
 
 
 <!-- Event binding HTML -> .ts -->
 <h1>Event Binding</h1>
 Name : <input type="text" (input)="changeName($event)">
 <p>your name {{myName}}</p>
+
+<button (click)="increment()">plus 1</button>
+<button on-click="decrement()">minus 1</button>
+<p>count : {{count}}</p>
 
 
 <!-- Two way dataa binding .ts = Html -->
@@ -37,7 +48,7 @@ Job role: <input type="text" [(ngModel)]="role">
 <div *ngIf="moviesArray.length===0; then load ; else showDataContainer" ></div>
 
 <ng-template #load>Loading...</ng-template>
-
+ 
 <ng-template #showDataContainer>
     <ul *ngFor="let movie of moviesArray">
         <li>{{movie}}</li>
@@ -59,7 +70,7 @@ Job role: <input type="text" [(ngModel)]="role">
     <tr *ngFor="let char of alphabets; index as idx; first as f; last as l; even as e; odd as o">
         <td>{{char}}</td>
         <td>{{idx}}</td>
-        <td>{{f}}</td>
+        <td >{{f ? 'yes' : "no"}}</td>
         <td>{{l}}</td>
         <td>{{e}}</td>
         <td>{{o}}</td>

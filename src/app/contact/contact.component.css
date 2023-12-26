@@ -1,0 +1,8 @@
+li{
+    border: 1px dotted red;
+}
+
+ul{
+    padding: 2rem;
+    list-style-type: none;
+}

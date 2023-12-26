@@ -12,11 +12,23 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { RouterModule,Routes } from '@angular/router';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { SampleService } from './sample.service';
+import { UsersComponent } from './users/users.component';
+import { EachuserComponent } from './eachuser/eachuser.component';
+import { Home1Component } from './home1/home1.component';
+import { Home2Component } from './home2/home2.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes:Routes = [
-  {path:"",component:WorkComponent},
+  {path:"home",component:WorkComponent,
+   children:[
+    {path:"home1",component:Home1Component},
+    {path:"home2",component:Home2Component},
+   ]},
   {path:"about",component:AboutComponent},
-  {path:"contact",component:ContactComponent},
+  {path:"fakedata",component:ContactComponent},
+  {path:"users",component:UsersComponent},
+  {path:"user/:id",component:EachuserComponent},
   {path:"**",component:NotfoundComponent},
 ]
 
@@ -28,16 +40,21 @@ const routes:Routes = [
     RemoveNumsPipe,
     AboutComponent,
     ContactComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    UsersComponent,
+    EachuserComponent,
+    Home1Component,
+    Home2Component
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [SampleService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

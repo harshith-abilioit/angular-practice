@@ -1,1 +1,16 @@
-<p>contact works!</p>
+<!-- <div *ngIf="isLoading"; then load else postsdata ></div>
+
+<ng-template #load>
+    Loading
+</ng-template>
+
+<ng-template #postsdata> -->
+    <ul *ngFor="let post of postsArray" >
+    <li>
+        <h1>{{post.title}}</h1>
+        <p>{{post.body}}</p>
+    </li>
+</ul>
+<!-- </ng-template> -->
+
+
